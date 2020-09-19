@@ -30,17 +30,22 @@ export default class Server{
 
     private listenSocket(){
 
-        console.log('hey you i am listening your fuck sockets')
+        console.log('hey you i am listening your sockets')
 
         this.io.on('connection', client =>{
+
+            //conecting client
+
+            socket.connectingClient(client);
             
-            console.log('new client conected')
+            //user
+            socket.user(client, this.io)
             
-        
-                //Messages
+            //Messages
             socket.message(client, this.io);
-                //disconnect
-            socket.disconnect( client)
+
+            //disconnect
+            socket.disconnect( client )
 
 
         } )
