@@ -22,5 +22,5 @@ server.app.use('/', router);
 
 
 server.start( () => {
-    console.log(`your fu*** server is running in port ${ server.port}`)
+    console.log(`your fu*** :) server is running in port ${ server.port}`)
 })

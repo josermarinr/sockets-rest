@@ -13,7 +13,7 @@ export default class Server{
     public io: socketIO.Server;
     private httpServer: http.Server;
 
-   private constructor(){
+    private constructor(){
         this.app = express();
         this.port = SERVER_PORT;
         this.httpServer = new http.Server(this.app)
@@ -38,7 +38,7 @@ export default class Server{
             
         
                 //Messages
-            socket.message(client);
+            socket.message(client, this.io);
                 //disconnect
             socket.disconnect( client)
 

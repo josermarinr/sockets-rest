@@ -19,6 +19,9 @@ export class ChatService {
     this.wsServices.emit('msg', payload);
   }
 
+  getMessages(){
+    return this.wsServices.listen('msg-new');
+  }
 
 
 
